@@ -1,0 +1,4 @@
+MCP Server Worktree
+
+This folder is being used for MCP server development and testing.
+The purpose is to keep MCP changes separate from Skill testing.
