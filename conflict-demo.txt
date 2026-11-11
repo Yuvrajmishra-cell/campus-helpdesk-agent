@@ -1,1 +1,4 @@
-Updated by Skill Testing Team
+Final project status
+
+Skill Testing Team: Updated the timetable Skill tests.
+MCP Development Team: Updated the MCP server.
