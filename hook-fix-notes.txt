@@ -1,0 +1,4 @@
+Hook Fix Worktree
+
+This folder is being used to test and fix the plugin hook.
+The purpose is to keep hook-related changes separate from other work.
