@@ -1,0 +1,9 @@
+Subject,Day,Batch,StartTime,EndTime,Room
+Database Management System,Monday,CSE-A,09:00,10:00,Room 101
+Java Programming,Monday,CSE-A,10:00,11:00,Room 102
+Computer Networks,Tuesday,CSE-A,09:00,10:00,Room 103
+Python Programming,Tuesday,CSE-A,10:00,11:00,Room 104
+Operating Systems,Wednesday,CSE-A,09:00,10:00,Room 105
+Software Engineering,Wednesday,CSE-A,10:00,11:00,Room 106
+Database Management System,Thursday,CSE-A,09:00,10:00,Room 101
+Java Programming,Friday,CSE-A,10:00,11:00,Room 102

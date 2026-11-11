@@ -1,16 +1,19 @@
 import csv
+from pathlib import Path
+
+# Locate the timetable CSV inside this Skill's folder
+skill_folder = Path(__file__).resolve().parents[1]
+csv_path = skill_folder / "data" / "timetable.csv"
 
 # Open the timetable CSV file
-with open("data/timetable.csv", "r") as file:
+with open(csv_path, "r", newline="", encoding="utf-8") as file:
     timetable = csv.DictReader(file)
 
-    # Ask the user for a day and batch
     day = input("Enter the day: ").strip()
     batch = input("Enter your batch: ").strip()
 
     found = False
 
-    # Search for matching classes
     for row in timetable:
         if row["Day"].lower() == day.lower() and row["Batch"].lower() == batch.lower():
             print("\nSubject:", row["Subject"])
@@ -18,7 +21,5 @@ with open("data/timetable.csv", "r") as file:
             print("Room:", row["Room"])
             found = True
 
-    # Show a message if no class is found
     if not found:
         print("No classes found for this day and batch.")
-
