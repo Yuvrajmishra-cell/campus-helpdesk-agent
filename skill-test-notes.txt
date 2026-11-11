@@ -1,0 +1,4 @@
+Skill Testing Worktree
+
+This folder is being used to test the timetable-helper Skill.
+The purpose is to keep Skill testing changes separate from other work.
