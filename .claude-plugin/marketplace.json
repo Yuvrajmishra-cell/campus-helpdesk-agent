@@ -1,0 +1,14 @@
+{
+  "name": "campus-helpdesk-marketplace",
+  "owner": {
+    "name": "Student Developer"
+  },
+  "description": "A marketplace for college helpdesk tools.",
+  "plugins": [
+    {
+      "name": "campus-helpdesk",
+      "source": "./plugin/campus-helpdesk",
+      "description": "A college helpdesk plugin with timetable assistance and campus services."
+    }
+  ]
+}

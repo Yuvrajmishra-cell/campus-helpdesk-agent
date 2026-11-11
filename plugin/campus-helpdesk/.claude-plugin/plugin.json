@@ -1,0 +1,8 @@
+{
+  "name": "campus-helpdesk",
+  "version": "1.0.0",
+  "description": "A college helpdesk plugin that helps students access timetable information and campus services.",
+  "author": {
+    "name": "Student Developer"
+  }
+}
