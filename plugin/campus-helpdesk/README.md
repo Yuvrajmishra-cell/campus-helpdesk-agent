@@ -38,7 +38,7 @@ The MCP configuration uses `${CLAUDE_PLUGIN_ROOT}` to locate the bundled server.
 ## Testing Status
 
 - Timetable helper script: Successfully tested.
-- Security hook: Simulated allow and deny tests passed.
+- Security hook: Three tests passed — blocked a file inside the project's protected folder, allowed a documentation file, and allowed an unrelated protected folder outside the project.
 - Bundled MCP server: Successfully launched using MCP Inspector.
 - `get_timetable`: Passed with Monday and CSE-A.
 - `get_fee_status`: Passed with STU002.
