@@ -4,7 +4,9 @@ Working on this project helped me understand how different AI-agent technologies
 
 A **Skill** provides an AI assistant with instructions and knowledge for performing a particular task. In this project, the `timetable-helper` Skill explains how to answer student timetable questions using a CSV file. A **Plugin** packages related features together, such as Skills, custom commands, hooks, and MCP configuration. It makes these features easier to organize and distribute.
 
-An **MCP server** provides a standard way for an AI application to access external tools and resources. My Python MCP server provides two tools: checking a batch timetable and checking a student's fee status. It also provides a hostel rules resource. I tested these features using MCP Inspector. **Git worktrees** allow multiple branches of the same Git repository to be checked out in separate working directories. I used them to work on Skill tests, MCP server development, and hook fixes independently. I also experienced and resolved a real merge conflict.
+An **MCP server** provides a standard way for an AI application to access external tools and resources. My Python MCP server provides two tools: checking a batch timetable and checking a student's fee status. It also provides a hostel rules resource. I tested these features using MCP Inspector.
+
+**Git worktrees** allow multiple branches of the same Git repository to be checked out in separate working directories. I created separate branches for Skill testing, MCP server development, and hook fixes. When two branches modified the same file, Git reported a merge conflict. I compared both versions, resolved the conflicting changes, and completed the merge.
 
 I would choose a **Skill** when the main requirement is to give an AI assistant reusable instructions and task-specific knowledge. I would choose **MCP** when the assistant needs to interact with external systems, data, tools, or resources through a standard interface. They can also work together: a Skill can explain when and how an assistant should use an MCP tool.
 

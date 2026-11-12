@@ -1,5 +1,4 @@
 # Part A – Claim Audit
-
 **Assignment:** Building and Auditing an AI-Agent Toolchain  
 **Verification date:** 11 November 2026
 
@@ -11,7 +10,7 @@
 
 **Reasoning:** MCP uses JSON-RPC 2.0 for communication between clients and servers. Tools allow models to perform actions, resources provide contextual data, and prompts provide reusable message templates. These features serve different purposes in an MCP application.
 
-**Official source:** https://modelcontextprotocol.io/specification/2025-11-25/basic/index.mdx
+**Official source:** https://modelcontextprotocol.io/specification/2025-11-25/basic
 
 ## Claim 2 – FALSE
 
@@ -73,6 +72,7 @@
 
 **Official sources:**
 - https://claude.com/blog/claude-code-plugins
+- https://github.com/anthropics/claude-code/blob/main/plugins/README.md
 - https://github.com/anthropics/claude-plugins-official
 
 ## Claim 8 – FALSE
