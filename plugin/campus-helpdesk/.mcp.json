@@ -3,7 +3,7 @@
     "campus-helpdesk-server": {
       "command": "python3",
       "args": [
-        "${CLAUDE_PLUGIN_ROOT}/../../mcp-server/server.py"
+        "${CLAUDE_PLUGIN_ROOT}/mcp-server/server.py"
       ]
     }
   }
