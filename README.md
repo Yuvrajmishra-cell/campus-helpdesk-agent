@@ -98,3 +98,42 @@ Use MCP Inspector to connect and test the available tools and resource.
 ## Assignment Scope
 
 This repository demonstrates practical implementation and testing of AI-agent components, along with Git collaboration workflows and basic security considerations.
+
+## Installing the Campus Helpdesk Plugin
+
+### 1. Add the Marketplace
+
+From Claude Code, run:
+
+```bash
+/plugin marketplace add Yuvrajmishra-cell/campus-helpdesk-agent
+```
+
+### 2. Install the Plugin
+
+```bash
+/plugin install campus-helpdesk@campus-helpdesk-marketplace
+```
+
+### 3. Verify Installation
+
+```bash
+/plugin
+```
+
+Check whether Campus Helpdesk appears in the installed plugins list.
+
+### 4. Uninstall the Plugin
+
+```bash
+/plugin uninstall campus-helpdesk@campus-helpdesk-marketplace
+```
+
+### 5. Remove the Marketplace
+
+```bash
+/plugin marketplace remove campus-helpdesk-marketplace
+```
+
+**Verification note:** These commands are documented for the assignment. Live plugin installation and runtime behavior were not tested because the Claude Code CLI was unavailable in the development environment.
+
