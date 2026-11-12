@@ -1,4 +1,6 @@
 from mcp.server import MCPServer
+import csv
+from pathlib import Path
 
 # Create our MCP server
 mcp = MCPServer("Campus Helpdesk Server")
@@ -7,30 +9,34 @@ mcp = MCPServer("Campus Helpdesk Server")
 # Tool 1: Get timetable information
 @mcp.tool()
 def get_timetable(batch: str, day: str) -> str:
-    """
-    Find all scheduled classes for a given batch and day.
-    Uses the college timetable CSV as its source.
-    """
-    import csv
-    from pathlib import Path
+    """Find classes for a given batch and day using the timetable CSV."""
 
-    # Locate the timetable CSV file in the repository
+    if not batch.strip() or not day.strip():
+        return "Error: Batch and day cannot be empty."
+
     csv_path = Path(__file__).parent.parent / "data" / "timetable.csv"
+
+    if not csv_path.is_file():
+        return "Error: Timetable data file is unavailable."
 
     results = []
 
-    with open(csv_path, "r", newline="", encoding="utf-8") as file:
-        reader = csv.DictReader(file)
+    try:
+        with open(csv_path, "r", newline="", encoding="utf-8") as file:
+            reader = csv.DictReader(file)
 
-        for row in reader:
-            if (
-                row["Batch"].strip().lower() == batch.strip().lower()
-                and row["Day"].strip().lower() == day.strip().lower()
-            ):
-                results.append(
-                    f"{row['Subject']}: {row['StartTime']} - "
-                    f"{row['EndTime']}, {row['Room']}"
-                )
+            for row in reader:
+                if (
+                    row["Batch"].strip().lower() == batch.strip().lower()
+                    and row["Day"].strip().lower() == day.strip().lower()
+                ):
+                    results.append(
+                        f"{row['Subject']}: {row['StartTime']} - "
+                        f"{row['EndTime']}, {row['Room']}"
+                    )
+
+    except (OSError, KeyError, csv.Error):
+        return "Error: Unable to read timetable data."
 
     if not results:
         return f"No classes found for batch {batch} on {day}."
@@ -41,10 +47,10 @@ def get_timetable(batch: str, day: str) -> str:
 # Tool 2: Check student fee status
 @mcp.tool()
 def get_fee_status(student_id: str) -> str:
-    """
-    Check the fee payment status of a student using their student ID.
-    Uses mock student fee records.
-    """
+    """Check a student's fee payment status using mock records."""
+
+    if not student_id.strip():
+        return "Error: Student ID cannot be empty."
 
     fee_records = {
         "STU001": "Paid",
@@ -59,18 +65,19 @@ def get_fee_status(student_id: str) -> str:
 
     return f"Fee status for {student_id}: {status}"
 
+
 # Resource: College hostel rules
 @mcp.resource("campus://hostel-rules")
 def get_hostel_rules() -> str:
-    """
-    Provides the college hostel rules document.
-    """
-
-    from pathlib import Path
+    """Provides the college hostel rules document."""
 
     rules_path = Path(__file__).parent / "hostel-rules.md"
 
-    return rules_path.read_text(encoding="utf-8")
+    try:
+        return rules_path.read_text(encoding="utf-8")
+    except OSError:
+        return "Error: Hostel rules document is unavailable."
+
 
 # Start the server
 if __name__ == "__main__":

@@ -48,20 +48,24 @@ The server uses standard input/output (stdio) transport.
 - Hostel rules: `mcp-server/hostel-rules.md`
 
 
+
 ## Testing
 
-The MCP server was tested successfully using MCP Inspector.
+The MCP server was tested using MCP Inspector and direct Python function calls.
 
 The following tests were completed:
 
 1. `get_timetable` – Successfully returned Monday's classes for batch CSE-A.
-2. `get_fee_status` – Successfully returned Pending for student STU002.
-3. Hostel rules resource – Successfully displayed the hostel rules document.
-4. Failure test – Correctly returned a no-classes-found message for batch CSE-E on Monday.
+2. `get_timetable` – Correctly rejected an empty batch input.
+3. `get_fee_status` – Successfully returned Pending for student STU002.
+4. `get_fee_status` – Correctly rejected an empty student ID.
+5. Hostel rules resource – Successfully returned the contents of `hostel-rules.md`.
+6. Failure test – Correctly returned a no-classes-found message for batch CSE-E on Monday.
 
-The server successfully connected using STDIO transport.
+The server successfully connected using STDIO transport through MCP Inspector.
 
-## Package Verification
+**Note:** Direct Python function calls were used for input validation tests.
+
 
 The assignment asked us to verify whether `@nimbus/mcp-skill-bridge` version `2.3` exists.
 
